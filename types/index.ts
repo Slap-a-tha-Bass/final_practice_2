@@ -1,3 +1,5 @@
+import { Request } from "express"
+
 export interface mySQLResponse {
     affectedRows: number,
     insertId: number,
@@ -11,14 +13,17 @@ export interface Books {
     _created: Date
 }
 export interface Users {
-    id: number,
-    name: string,
-    email: string,
-    password: string,
-    role: string,
-    _created: Date
+    id?: number,
+    name?: string,
+    email?: string,
+    password?: string,
+    role?: string,
+    _created?: Date
 }
 export interface Categories {
     id: number,
     name: string
+}
+export interface ReqUsers extends Request {
+    user?: Users
 }
