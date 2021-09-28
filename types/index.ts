@@ -18,3 +18,7 @@ export interface Users {
     role: string,
     _created: Date
 }
+export interface Categories {
+    id: number,
+    name: string
+}
