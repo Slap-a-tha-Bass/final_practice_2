@@ -42,12 +42,12 @@ const EditBook = () => {
             <section className="row justify-content-center">
                 <div className="col-md-6">
                     <form action="" className="form-group">
-                        <label htmlFor="">Title</label>
+                        <label className="text-primary font-weight-bold">Title</label>
                         <input value={title || ''} onChange={e => setTitle(e.target.value)} type="text" className="form-control" />
-                        <label htmlFor="">Author</label>
+                        <label className="text-primary font-weight-bold">Author</label>
                         <input value={author || ''} onChange={e => setAuthor(e.target.value)} type="text" className="form-control" />
-                        <label htmlFor="">Price</label>
-                        <input value={price || ''} onChange={e => setPrice(Number(e.target.value))} step='.01' type="number" className="form-control" />
+                        <label className="text-primary font-weight-bold">Price</label>
+                        <input value={price || ''} onChange={e => setPrice(Number(e.target.value))} step='.01' type="number" className="form-control mb-3" />
                         <select value={categoryid} onChange={selectCategory}>
                             <option value="0">Choose Genre</option>
                             {categories.map((category) => (
@@ -57,7 +57,7 @@ const EditBook = () => {
                             ))}
                         </select>
                         <div>
-                            <button onClick={handleSubmit} className="btn btn-primary">Submit</button>
+                            <button onClick={handleSubmit} className="btn btn-primary mt-3">Submit</button>
                         </div>
                     </form>
                 </div>
