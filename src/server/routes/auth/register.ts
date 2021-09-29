@@ -8,7 +8,7 @@ import { generateHash } from '../../utils/passwords';
 
 const router = express.Router();
 
-router.post('/',passport.authenticate('local'), async (req: ReqUsers, res) => {
+router.post('/', async (req: ReqUsers, res) => {
     const { email, password, name } = req.body;
     try {
         if(!email || !password){

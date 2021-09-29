@@ -8,7 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState<Users['email']>('');
     const [password, setPassword] = useState<Users['password']>('');
 
-    const handleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleLogin = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         apiService('/auth/login', 'POST', { email, password, role: 'guest' })
             .then(token => {
