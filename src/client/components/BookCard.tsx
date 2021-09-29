@@ -27,8 +27,8 @@ const BookCard = (props: Books) => {
                 <div className="card-title">{props.author}</div>
                 <div className="card-text">{props.price}</div>
             </div>
-            {props.isPreview && <Link to={`/edit/${props.id}`}>Edit</Link>}
-            {props.isPreview && <button onClick={handleDelete} >Delete</button>}
+            {props.isPreview && <Link className="btn btn-primary" to={`/edit/${props.id}`}>Edit</Link>}
+            {props.isPreview && <button className="btn btn-primary" onClick={handleDelete} >Delete</button>}
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Books, Categories } from '../../../types';
 import { apiService } from '../utils/api-service';
 
@@ -7,8 +8,8 @@ const Home = () => {
     const history = useHistory();
     const [title, setTitle] = useState<Books['title']>('');
     const [author, setAuthor] = useState<Books['author']>('');
-    const [price, setPrice] = useState<Books['price']>(null);
-    const [categoryid, setCategoryid] = useState<Books['id']>(null);
+    const [price, setPrice] = useState<Books['price']>();
+    const [categoryid, setCategoryid] = useState<Books['id']>();
     const [categories, setCategories] = useState<Categories[]>([]);
 
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -46,6 +47,7 @@ const Home = () => {
                         </select>
                     <div>
                         <button onClick={handleSubmit} className="btn btn-primary">Submit</button>
+                        <Link className="btn btn-primary" to='/profile'>Profile</Link>
                     </div>
                     </form>
                 </div>

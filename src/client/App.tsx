@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Private from './components/Private';
 import BookDetails from './views/BookDetails';
 import Books from './views/Books';
 import EditBook from './views/EditBook';
@@ -27,9 +28,9 @@ const App = (props: AppProps) => {
 				<Route exact path = "/edit/:id">
 					<EditBook />
 				</Route>
-				<Route exact path = "/profile">
+				<Private exact path = "/profile">
 					<Profile />
-				</Route>
+				</Private>
 				<Route exact path = "/login">
 					<Login />
 				</Route>
