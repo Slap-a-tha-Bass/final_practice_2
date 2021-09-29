@@ -15,6 +15,7 @@ const Login = () => {
                 localStorage.setItem('token', token),
                     history.push('/profile')
             })
+            .catch(() => history.push('/invalid'))
     }
 
     return (

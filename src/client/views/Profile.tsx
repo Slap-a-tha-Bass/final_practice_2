@@ -21,7 +21,7 @@ const Profile = () => {
                 <div className="col-md-6">
                     <div>
                         <h2 className="text-primary">profile</h2>
-                        <div>{user}</div>
+                        <h1 className="text-primary">{user}</h1>
                         <Link to='/' className="btn btn-primary">Home</Link>
                         <button onClick={handleSignOut} className="btn btn-primary">Sign Out</button>
                     </div>

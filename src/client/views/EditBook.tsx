@@ -26,8 +26,8 @@ const EditBook = () => {
             .then(data => {
                 setTitle(data.title),
                 setAuthor(data.author),
-                setPrice(data.price)
-                // setCategoryid(data.categoryid)
+                setPrice(data.price),
+                setCategoryid(data.categoryid)
             })
     }, [id])
     useEffect(() => {
@@ -47,8 +47,8 @@ const EditBook = () => {
                         <label htmlFor="">Author</label>
                         <input value={author || ''} onChange={e => setAuthor(e.target.value)} type="text" className="form-control" />
                         <label htmlFor="">Price</label>
-                        <input value={price} onChange={e => setPrice(Number(e.target.value))} step='.01' type="number" className="form-control" />
-                        <select onChange={selectCategory}>
+                        <input value={price || ''} onChange={e => setPrice(Number(e.target.value))} step='.01' type="number" className="form-control" />
+                        <select value={categoryid} onChange={selectCategory}>
                             <option value="0">Choose Genre</option>
                             {categories.map((category) => (
                                 <option value={category.id} key={category.id}>

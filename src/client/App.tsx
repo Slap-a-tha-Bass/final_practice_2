@@ -6,6 +6,7 @@ import BookDetails from './views/BookDetails';
 import Books from './views/Books';
 import EditBook from './views/EditBook';
 import Home from './views/Home';
+import Invalid from './views/Invalid';
 import Login from './views/Login';
 import Profile from './views/Profile';
 import Register from './views/Register';
@@ -36,6 +37,9 @@ const App = (props: AppProps) => {
 				</Route>
 				<Route exact path = "/register">
 					<Register />
+				</Route>
+				<Route exact path = "/invalid">
+					<Invalid />
 				</Route>
 			</Switch>
 		</BrowserRouter>

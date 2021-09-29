@@ -14,7 +14,7 @@ router.post('/',passport.authenticate('local'), async (req: ReqUsers, res) => {
         res.json(token);
         return;
     } catch (error) {
-        
+        res.status(500).json({ message: 'Problem logging in', error: error.message})
     }
 });
 
