@@ -10,8 +10,8 @@ const EditBook = () => {
 
     const [title, setTitle] = useState<Books['title']>('');
     const [author, setAuthor] = useState<Books['author']>('');
-    const [price, setPrice] = useState<Books['price']>(null);
-    const [categoryid, setCategoryid] = useState<Books['id']>(null);
+    const [price, setPrice] = useState<Books['price']>();
+    const [categoryid, setCategoryid] = useState<Books['id']>();
     const [categories, setCategories] = useState<Categories[]>([]);
 
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
