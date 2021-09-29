@@ -10,7 +10,8 @@ export interface Books {
     title: string,
     author: string,
     price: number,
-    _created: Date
+    _created: Date,
+    isPreview: boolean
 }
 export interface Users {
     id?: number,

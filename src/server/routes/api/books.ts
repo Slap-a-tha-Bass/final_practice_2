@@ -42,7 +42,7 @@ router.put('/:id/edit', async (req, res) => {
         res.status(500).json({ message: 'Problem editing book', error: error.message})
     }
 });
-router.delete('/:id', async (req, res) => {
+router.delete('/:id/delete', async (req, res) => {
     const { id } = req.params;
     try {
         await db_books.delete_book(Number(id));

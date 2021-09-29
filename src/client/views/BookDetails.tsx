@@ -12,10 +12,10 @@ const BookDetails = () => {
         apiService(`/api/books/${id}`)
             .then(data => setBooks(data))
     }, [id]);
-    
+
     return (
         <div>
-            <BookCard {...books} key={id} />
+            <BookCard {...books} key={id} isPreview />
         </div>
     )
 }
