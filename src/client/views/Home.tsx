@@ -30,6 +30,7 @@ const Home = () => {
         <main className="container">
             <section className="row justify-content-center">
                 <div className="col-md-6">
+                    <h2 className="text-primary">home</h2>
                     <form action="" className="form-group">
                         <label htmlFor="">Title</label>
                         <input value={title || ''} onChange={e => setTitle(e.target.value)} type="text" className="form-control" />

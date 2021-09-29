@@ -13,7 +13,7 @@ const BookCard = (props: Books) => {
     const [categoryid, setCategoryid] = useState<Categories['id']>(null);
 
     const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
-        if(confirm('Are you sure you want to delete?')) {
+        if (confirm('Are you sure you want to delete?')) {
             apiService(`/api/books/${id}/delete`, 'DELETE', { title, author, price, categoryid })
                 .then(data => {
                     history.push('/books')
@@ -21,15 +21,22 @@ const BookCard = (props: Books) => {
         }
     }
     return (
-        <div className = "card">
-            <div className="card-header">{props.title}</div>
-            <div className="card-body">
-                <div className="card-title">{props.author}</div>
-                <div className="card-text">{props.price}</div>
-            </div>
-            {props.isPreview && <Link className="btn btn-primary" to={`/edit/${props.id}`}>Edit</Link>}
-            {props.isPreview && <button className="btn btn-primary" onClick={handleDelete} >Delete</button>}
-        </div>
+        <main className="container">
+            <section className="row justify-content-center">
+                <div className="col-md-4">
+                    <div className="card text-center">
+                        <div className="card-header">{props.title}</div>
+                        <div className="card-body">
+                            <div className="card-title">{props.author}</div>
+                            <div className="card-text">{props.price}</div>
+                        </div>
+                        {props.isPreview && <Link className="btn btn-primary" to={`/edit/${props.id}`}>Edit</Link>}
+                        {props.isPreview && <button className="btn btn-primary" onClick={handleDelete} >Delete</button>}
+                    </div>
+                </div>
+            </section>
+        </main>
+
     )
 }
 

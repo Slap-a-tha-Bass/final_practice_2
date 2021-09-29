@@ -14,6 +14,7 @@ const Books = () => {
     }, [])
     return (
         <div>
+            <h2 className="text-primary text-center">books</h2>
             {books.map((book) => (
                 <Link key = {book.id} to={`/books/${book.id}`}><BookCard {...book} /></Link>
             ))}

@@ -16,11 +16,19 @@ const Profile = () => {
         history.push('/login')
     }
     return (
-        <div>
-            <div>{user}</div>
-            <Link to='/' className="btn btn-primary">Home</Link>
-            <button onClick={handleSignOut} className="btn btn-primary">Sign Out</button>
-        </div>
+        <main className="container">
+            <section className="row justify-content-center">
+                <div className="col-md-6">
+                    <div>
+                        <h2 className="text-primary">profile</h2>
+                        <div>{user}</div>
+                        <Link to='/' className="btn btn-primary">Home</Link>
+                        <button onClick={handleSignOut} className="btn btn-primary">Sign Out</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
     )
 }
 

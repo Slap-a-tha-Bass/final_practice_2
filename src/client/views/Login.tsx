@@ -13,21 +13,28 @@ const Login = () => {
         apiService('/auth/login', 'POST', { email, password, role: 'guest' })
             .then(token => {
                 localStorage.setItem('token', token),
-                history.push('/profile'),
-                console.log(token);
+                    history.push('/profile')
             })
     }
 
     return (
-        <div>
-            <form className="form-group">
-                <label htmlFor="">Email</label>
-                <input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" />
-                <label htmlFor="">Password</label>
-                <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="form-control" />
-                <button onClick={handleLogin} className="btn btn-primary">Login</button>
-            </form>
-        </div>
+        <main className="container">
+            <section className="row justify-content-center">
+                <div className="col-md-6">
+                    <div>
+                        <h2 className="text-primary">login</h2>
+                        <form className="form-group">
+                            <label htmlFor="">Email</label>
+                            <input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" />
+                            <label htmlFor="">Password</label>
+                            <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="form-control" />
+                            <button onClick={handleLogin} className="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
     )
 }
 
